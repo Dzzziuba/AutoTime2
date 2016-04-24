@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 import java.util.List;
 
 /**
@@ -18,7 +19,10 @@ public class UserDaoImpl implements UserDao {
     public boolean login(User user) {
         EntityManager em = emf.createEntityManager();
 
-        List<User> userList = em.createQuery("select i from User i where userLogin='" + user.getUserLogin() + "' and userPassword='" + user.getUserPassword()+"'").getResultList();
+        Query query = em.createQuery("select i from User i where userLogin=:login and userPassword=:password");
+        query.setParameter("login", user.getUserLogin());
+        query.setParameter("password", user.getUserPassword());
+        List<User> userList=query.getResultList();
 
         return userList.isEmpty() ? false : true;
     }

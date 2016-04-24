@@ -1,4 +1,4 @@
-<%--
+<%@ page import="org.apache.commons.lang.BooleanUtils" %><%--
   Created by IntelliJ IDEA.
   User: Romachka
   Date: 22.04.16
@@ -18,21 +18,18 @@
 
 <%
     request.getSession(true);
-    if (session.isNew()) {
-        session.setAttribute("Login", false);
-    } else {
-        if (Boolean.valueOf((boolean) session.getAttribute("Login"))) {
+    if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {
 %>
 
 <form action="/AddNewVariant" method="post">
     <div class="login">
 
         <div>
-            <input class="logininput" hidden="true" type="text" name="brand_id" value="${param.brand_id}"/>
+            <input class="logininput" hidden="true" type="text" name="brand_id" value="<%=session.getAttribute("brand_id")%>"/>
         </div>
 
         <div>
-            <input class="logininput" hidden="true" type="text" name="model_id" value="${param.model_id}"/>
+            <input class="logininput" hidden="true" type="text" name="model_id" value="<%=session.getAttribute("model_id")%>"/>
         </div>
 
         <div>
@@ -71,7 +68,7 @@
 </form>
 
 <%
-        }
+
     }
 %>
 </body>

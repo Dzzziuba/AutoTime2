@@ -1,3 +1,4 @@
+<%@ page import="com.auto.time.Model.Model" %>
 <%@ page import="com.auto.time.Model.Variant" %>
 <%@ page import="com.auto.time.dao.impl.VariantDaoImpl" %>
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
@@ -28,16 +29,27 @@
 
     <%
         VariantDaoImpl vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDaoImpl.class);
+
         List<Variant> variantList;
 
-        if (modelId != 0) {
-            variantList = vdi.getVariantsByModelId(modelId);
-        } else {
+        Model model = new Model();
+
+        model.setId(modelId);
+
+        if (model.getId() != 0) {%>
+
+    <h1 style="color:#5C97BF;">${param.model_name}</h1>
+
+            <%variantList = vdi.getVariantsByModelId(model);
+
+        } else {%>
+    <h1 style="color:#5C97BF;">All variants</h1>
+    <%
             variantList = vdi.getAllVariants();
         }
 
         for (Variant v : variantList) {
-            if (modelId != 0) {%>
+            if (model.getId() != 0) {%>
     <p class="whitespace"><a
             href="Variant.jsp?model_id=${param.model_id}&model_name=${param.model_name}&variant_id=<%=v.getId()%>&variant_name=<%=v.getVariantName()%>"
             class="brandtitle"><%=v.getVariantName()%>
@@ -50,14 +62,13 @@
             }
         }
     %>
-    <% if (session.isNew()) {
-        session.setAttribute("Login", false);
-    } else {
-        if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) && Integer.valueOf(request.getParameter("brand_id")) != 0 && Integer.valueOf(request.getParameter("model_id")) != 0) {%>
-    <p class="whitespace"><a href="../WEB-INF/AddVariant.jsp?brand_id=${param.brand_id}&brand_name=${param.brand_name}&model_id=${param.model_id}&model_name=${param.model_name}"
-                             class="brandtitle">+ Add new variant</a></p>
     <%
-            }
+        if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) && Integer.valueOf(request.getParameter("brand_id")) != 0 && Integer.valueOf(request.getParameter("model_id")) != 0) {
+            session.setAttribute("model_id",modelId);%>
+    <p class="whitespace">
+    <form method="get" action="/AddNewVariant"><input type="submit" class="addbutton" value="+ Add new variant"/></form></p>
+    <%
+
         }
     %>
 </div>

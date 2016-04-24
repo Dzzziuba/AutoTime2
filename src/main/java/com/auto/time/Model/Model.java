@@ -21,10 +21,10 @@ public class Model {
     private String modelName;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id", updatable = false, insertable = false)
+    //@JoinColumn(name = "id", updatable = false, insertable = false)
     private Brand brand;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
     private List<Variant> variantList;
 
     public Model() {

@@ -17,7 +17,10 @@
 
 </head>
 <body>
+
 <%@include file="/Pages/Header.jsp" %>
+<h1>${param.variant_name}</h1>
+
     <% //request.getSession(true);
     long variantId = Long.valueOf(request.getParameter("variant_id"));%>
 <div style="width: 30%">

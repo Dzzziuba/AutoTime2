@@ -23,6 +23,7 @@
 <%@include file="/Pages/Header.jsp" %>
 <div class="brandlistspaces">
 
+    <h1 style="color:#5C97BF;">All brands</h1>
     <%
         request.getSession(true);
         BrandDao bdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(BrandDao.class);
@@ -37,7 +38,8 @@
 
     <%}%>
     <%if(BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))){%>
-    <p class="whitespace"><a href="../WEB-INF/AddBrand.jsp" class="brandtitle">+ Add new brand</a></p>
+    <p class="whitespace">
+        <form method="get" action="/AddNewBrand"><input type="submit" class="addbutton" value="+ Add new brand"/></form></p>
     <%}%>
 </div>
 

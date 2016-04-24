@@ -1,5 +1,6 @@
 package com.auto.time.dao;
 
+import com.auto.time.Model.Model;
 import com.auto.time.Model.Variant;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Map;
  */
 public interface VariantDao {
     List<Variant> getAllVariants();
-    List<Variant> getVariantsByModelId(long modelId);
+    List<Variant> getVariantsByModelId(Model model);
     Variant getVariantByName(String name);
     void addNewVariant(Variant variant);
     void deleteVariant(String variantName, long modelId);

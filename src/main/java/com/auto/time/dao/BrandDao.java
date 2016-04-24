@@ -11,7 +11,7 @@ public interface BrandDao {
     List<Brand> getAllBrands();
     List<Brand> getBrandByName(String brandName);
     void addNewBrand(Brand brand);
-    void deleteBrand(String brandName);
+    void deleteBrand(Brand brand);
     void deleteBrand(long brandId);
 
 

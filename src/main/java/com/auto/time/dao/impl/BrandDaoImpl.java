@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -27,8 +28,9 @@ public class BrandDaoImpl implements BrandDao {
 
     public List<Brand> getBrandByName(String brandName) {
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Brand> brandList = em.createQuery("select i from Brand i where brandName='" + brandName.toLowerCase() + "'", Brand.class);
-        List<Brand> result = brandList.getResultList();
+        Query query = em.createQuery("select b from Brand b where brandName=:brandName");
+        query.setParameter("brandName", brandName);
+        List<Brand> result = query.getResultList();
         return result;
     }
 
@@ -41,8 +43,12 @@ public class BrandDaoImpl implements BrandDao {
     }
 
 
-    public void deleteBrand(String brandName) {
+    public void deleteBrand(Brand brand) {
 
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.remove(em.merge(brand));
+        em.getTransaction().commit();
     }
 
     public void deleteBrand(long brandId) {

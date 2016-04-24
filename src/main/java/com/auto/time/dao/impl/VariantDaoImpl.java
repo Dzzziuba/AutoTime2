@@ -1,11 +1,13 @@
 package com.auto.time.dao.impl;
 
+import com.auto.time.Model.Model;
 import com.auto.time.Model.Variant;
 import com.auto.time.dao.VariantDao;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Map;
@@ -41,9 +43,11 @@ public class VariantDaoImpl implements VariantDao {
         em.getTransaction().commit();
     }
 
-    public List<Variant> getVariantsByModelId(long modelId) {
+    public List<Variant> getVariantsByModelId(Model model) {
         EntityManager em = emf.createEntityManager();
-        List<Variant> variantList = em.createQuery("select v from Variant v where model =" + modelId).getResultList();
+        Query query = em.createQuery("select v from Variant v where model =:model");
+        query.setParameter("model", model);
+        List<Variant> variantList = query.getResultList();
         return variantList;
 
     }
@@ -54,7 +58,9 @@ public class VariantDaoImpl implements VariantDao {
 
     public Map<String, String> getVariantInfo(long id) {
         EntityManager em = emf.createEntityManager();
-        Variant variant = em.createQuery("select i from Variant i where id=" + id, Variant.class).getSingleResult();
+        Query query = em.createQuery("select i from Variant i where id=:id");
+        query.setParameter("id", id);
+        Variant variant =(Variant) query.getSingleResult();
         Map<String, String> map = variant.showVariant();
         return map;
     }

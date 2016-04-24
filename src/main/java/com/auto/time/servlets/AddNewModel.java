@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -18,8 +19,14 @@ import java.io.IOException;
 @WebServlet("/AddNewModel")
 public class AddNewModel extends HttpServlet {
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("WEB-INF/AddModel.jsp").forward(req,resp);
+
+    }
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long brandId = Long.valueOf(req.getParameter("brand_id"));
+
         Brand brand = new Brand();
         brand.setId(brandId);
         String modelName = req.getParameter("model_name").trim();
@@ -27,10 +34,12 @@ public class AddNewModel extends HttpServlet {
             Model model = new Model();
             model.setBrand(brand);
             model.setModelName(modelName);
+
             ModelDao modelDao = WebApplicationContextUtils.getWebApplicationContext(getServletContext()).getBean(ModelDao.class);
             modelDao.addNewModel(model);
         }
-        resp.sendRedirect("Pages/Models.jsp?brand_id=" + brandId + "&brand_name=" + req.getParameter("brand_id"));
+        HttpSession session = req.getSession();
+        resp.sendRedirect("Pages/Models.jsp?brand_id=" + brandId + "&brand_name="+session.getAttribute("brand_name"));
 
     }
 }

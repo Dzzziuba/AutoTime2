@@ -1,7 +1,8 @@
 .Title{
     margin-left: 45%;
     margin-top: 5%;
-    color: darkcyan;
+    /*color: darkcyan;*/
+    color: #5C97BF;
 }
 .brandtitle{
     margin-left: 0%;
@@ -82,7 +83,9 @@ a:hover{
     height: 30%;
     border-radius: 5px;
     font-size: 100%;
-    background-color: #84BDBC;
+    /*background-color: #84BDBC;*/
+    background-color: #5C97BF;
+    color: #F2F2F2;
     border: 1px solid rgb(209,209,209);
 }
 
@@ -114,10 +117,51 @@ a:hover{
     height: 5%;
     border-radius: 5px;
     font-size: 100%;
-    background-color: azure;
+    /*background-color: azure;*/
+    background-color: #5C97BF;
+    color: #F2F2F2;
     border: 1px solid rgb(209,209,209);
     opacity: 0.3;
 }
 .smallloginbutton:hover{
+    cursor: pointer;
+}
+
+.addbutton{
+    margin-left: 0%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    color:darkslategray;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    padding: 0.6em;
+    min-height:3%;
+    width: 19.6%;
+    text-align: center;
+    background-color:rgb(245,245,245);
+    border: 1px solid rgb(209,209,209);
+    font-family: sans-serif;
+    font-weight: 100;
+}
+.addbutton:hover{
+    background-color:rgb(209,209,209);
+    cursor: pointer;
+}
+
+.deletebutton{
+    margin-left: 0%;
+    margin-right: 80.4%;
+    margin-top: 0.5%;
+    width: 19.6%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: 100%;
+    background-color: crimson;
+    border: 1px solid rgb(209,209,209);
+    opacity: 0.7;
+
+}
+.deletebutton:hover{
     cursor: pointer;
 }

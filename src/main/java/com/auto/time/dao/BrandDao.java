@@ -13,6 +13,7 @@ public interface BrandDao {
     void addNewBrand(Brand brand);
     void deleteBrand(Brand brand);
     void deleteBrand(long brandId);
+    Brand getById(long id);
 
 
 }

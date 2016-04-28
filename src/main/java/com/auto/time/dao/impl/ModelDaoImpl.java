@@ -42,8 +42,9 @@ public class ModelDaoImpl implements ModelDao {
     public void deleteModel(Model model) {
 
         EntityManager em = emf.createEntityManager();
-        Query query = em.createQuery("delete  from Model m where id=:id");
-        query.setParameter("id", model.getId());
+        em.getTransaction().begin();
+        em.remove(em.merge(model));
+        em.getTransaction().commit();
     }
 
     public void addNewModel(Model model) {

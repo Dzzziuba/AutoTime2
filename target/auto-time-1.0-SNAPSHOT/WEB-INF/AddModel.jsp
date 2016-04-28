@@ -14,7 +14,7 @@
     <title>AutoTime</title>
 </head>
 <body>
-<%@include file="/Pages/Header.jsp" %>
+<%@include file="/WEB-INF/Header.jsp" %>
 
 <%
     request.getSession(true);

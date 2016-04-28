@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<%@include file="/Pages/Header.jsp" %>
+<%@include file="/WEB-INF/Header.jsp" %>
 <h1>${param.variant_name}</h1>
 
     <% //request.getSession(true);

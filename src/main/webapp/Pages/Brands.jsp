@@ -20,7 +20,7 @@
     <title>AutoTime</title>
 </head>
 <body>
-<%@include file="/Pages/Header.jsp" %>
+<%@include file="/WEB-INF/Header.jsp" %>
 <div class="brandlistspaces">
 
     <h1 style="color:#5C97BF;">All brands</h1>

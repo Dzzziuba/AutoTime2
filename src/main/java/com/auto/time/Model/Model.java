@@ -21,7 +21,7 @@ public class Model {
     private String modelName;
 
     @ManyToOne(optional = false)
-    //@JoinColumn(name = "id", updatable = false, insertable = false)
+    @JoinColumn(name = "brand_id", updatable = false, insertable = false)
     private Brand brand;
 
     @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)

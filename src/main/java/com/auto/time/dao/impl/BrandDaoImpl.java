@@ -55,5 +55,12 @@ public class BrandDaoImpl implements BrandDao {
 
     }
 
+    public Brand getById(long id){
+        EntityManager em = emf.createEntityManager();
+                Query query = em.createQuery("select b from Brand b where id=:id");
+        query.setParameter("id", id);
+        Brand brand= (Brand) query.getSingleResult();
+        return brand;
+    }
 
 }

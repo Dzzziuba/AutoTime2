@@ -22,7 +22,7 @@
 
 </head>
 <body>
-<%@include file="/Pages/Header.jsp" %>
+<%@include file="/WEB-INF/Header.jsp" %>
 <% request.getSession(true);
     long brandId = Long.valueOf(request.getParameter("brand_id"));%>
 

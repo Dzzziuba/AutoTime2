@@ -20,13 +20,12 @@
 
 </head>
 <body>
-<%@include file="/Pages/Header.jsp" %>
+<%@include file="/WEB-INF/Header.jsp" %>
 <% request.getSession(true);
     long modelId = Long.valueOf(request.getParameter("model_id"));%>
 
 
 <div class="brandlistspaces">
-
     <%
         VariantDaoImpl vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDaoImpl.class);
 
@@ -38,7 +37,12 @@
 
         if (model.getId() != 0) {%>
 
-    <h1 style="color:#5C97BF;">${param.model_name}</h1>
+    <h1 style="color:#5C97BF;">${param.model_name}</h1> <%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>
+    <form method="get" action="/DeleteModel">
+        <input type="submit" class="deletebutton" value="- Delete model ${param.model_name}"
+               onclick="return confirm('Are you really want to delete model ${param.model_name} and all information which connected with it?!')"/>
+    </form>
+    <%}%>
 
             <%variantList = vdi.getVariantsByModelId(model);
 

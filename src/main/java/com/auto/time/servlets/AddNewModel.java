@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Romachka on 21.04.16.
@@ -46,17 +44,6 @@ public class AddNewModel extends HttpServlet {
 
             model.setBrand(brand);
             model.setModelName(modelName);
-
-            List<Model> modelList = new ArrayList<Model>();
-
-            modelList.add(model);
-            brand.setModelList(modelList);
-            model.setBrand(brand);
-
-
-
-
-
 
            ModelDao modelDao = WebApplicationContextUtils.getWebApplicationContext(getServletContext()).getBean(ModelDao.class);
             modelDao.addNewModel(model);

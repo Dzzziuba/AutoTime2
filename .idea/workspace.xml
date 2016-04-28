@@ -2,47 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89fa9f0a-59c0-4792-b173-343bb3b7a07d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/DeleteModel.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Header.jsp" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/Pages/Header.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Header.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Brand.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Brand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Model.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/BrandDao.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/BrandDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/BrandDaoImpl.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/BrandDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/ModelDaoImpl.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/ModelDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/AddNewModel.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/AddNewModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Brand.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Brand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Model.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/BrandDao.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/BrandDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/BrandDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/BrandDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/ModelDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/ModelDaoImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/servlets/AddNewModel.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/servlets/AddNewModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/BrandDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/BrandDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Pages/Brands.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Pages/Brands.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Pages/Models.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Pages/Models.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Pages/Variant.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Pages/Variant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/Pages/Variants.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/Pages/Variants.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddBrand.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddBrand.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddModel.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddModel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddVariant.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddVariant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/app-ctx.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/app-ctx.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Brands.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Brands.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Models.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Models.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Variant.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Variant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Variants.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/Pages/Variants.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddBrand.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddBrand.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddModel.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddModel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddVariant.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddVariant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/Login.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/Login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/app-ctx.xml" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/app-ctx.xml" />
     </list>
     <ignored path="AutoTime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,11 +58,10 @@
       <file leaf-file-name="AddNewModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1724#1731#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1166,7 +1131,7 @@
       <workItem from="1461487275267" duration="5954000" />
       <workItem from="1461524715408" duration="1928000" />
       <workItem from="1461569463494" duration="5607000" />
-      <workItem from="1461825082910" duration="2789000" />
+      <workItem from="1461825082910" duration="2903000" />
     </task>
     <task id="LOCAL-00001" summary="gj">
       <created>1461527298374</created>
@@ -1175,11 +1140,18 @@
       <option name="project" value="LOCAL" />
       <updated>1461527298374</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gj">
+      <created>1461829287631</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1461829287631</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113567000" />
+    <option name="totallyTimeSpent" value="113681000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1477,6 +1449,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1623,11 +1596,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1724#1731#0" expanded="true" />
           </folding>
         </state>
       </provider>

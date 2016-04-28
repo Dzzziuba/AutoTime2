@@ -4,10 +4,14 @@
     <list default="true" id="89fa9f0a-59c0-4792-b173-343bb3b7a07d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT.war" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Brand.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Brand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Model.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Model.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/AddNewModel.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/AddNewModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Brand.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Brand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Model.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Model.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/servlets/AddNewModel.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/servlets/AddNewModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java" />
     </list>
     <ignored path="AutoTime.iws" />
@@ -35,8 +39,8 @@
       <file leaf-file-name="Brand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+            <state relative-caret-position="170">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
                 <element signature="method#equals#0;class#Brand#0" expanded="false" />
                 <element signature="method#isUnique#0;class#Brand#0" expanded="false" />
@@ -45,57 +49,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="162">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddNewModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddNewModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="252">
+              <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrandDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/BrandDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrandDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="58" column="53" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="53" />
-              <folding>
-                <element signature="method#addNewBrand#0;class#BrandDaoImpl#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="52" column="22" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="22" />
-              <folding>
-                <element signature="method#getModelsByBrandId#0;class#ModelDaoImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -172,15 +152,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/Pages/Brands.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/Pages/Variants.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/DeleteModel.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/app-ctx.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/auto/time/dao/BrandDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
       </list>
     </option>
   </component>
@@ -1131,7 +1111,7 @@
       <workItem from="1461487275267" duration="5954000" />
       <workItem from="1461524715408" duration="1928000" />
       <workItem from="1461569463494" duration="5607000" />
-      <workItem from="1461825082910" duration="2903000" />
+      <workItem from="1461825082910" duration="3793000" />
     </task>
     <task id="LOCAL-00001" summary="gj">
       <created>1461527298374</created>
@@ -1147,11 +1127,18 @@
       <option name="project" value="LOCAL" />
       <updated>1461829287631</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gj">
+      <created>1461829394660</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1461829394660</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113681000" />
+    <option name="totallyTimeSpent" value="114571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1167,14 +1154,14 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36726272" sideWeight="0.4951535" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36726272" sideWeight="0.4951535" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.49676898" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3823934" sideWeight="0.6332795" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.49353796" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39752406" sideWeight="0.36672053" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39752406" sideWeight="0.36672053" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.49676898" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1276,6 +1263,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1520,13 +1508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewVariant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -1547,33 +1528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/BrandDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="20" column="15" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-          <folding>
-            <element signature="method#equals#0;class#Brand#0" expanded="false" />
-            <element signature="method#isUnique#0;class#Brand#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1584,10 +1538,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/BrandDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="22" />
+        <state relative-caret-position="309">
+          <caret line="51" column="36" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
           <folding>
             <element signature="method#getModelsByBrandId#0;class#ModelDaoImpl#0" expanded="false" />
           </folding>
@@ -1596,11 +1558,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/servlets/AddNewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="method#equals#0;class#Brand#0" expanded="false" />
+            <element signature="method#isUnique#0;class#Brand#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="65" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
+          <folding />
         </state>
       </provider>
     </entry>

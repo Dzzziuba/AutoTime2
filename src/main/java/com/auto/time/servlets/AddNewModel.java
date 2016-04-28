@@ -44,7 +44,7 @@ public class AddNewModel extends HttpServlet {
 
             model.setBrand(brand);
             model.setModelName(modelName);
-
+            System.out.println(model.toString());
            ModelDao modelDao = WebApplicationContextUtils.getWebApplicationContext(getServletContext()).getBean(ModelDao.class);
             modelDao.addNewModel(model);
         }

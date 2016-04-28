@@ -21,7 +21,7 @@ public class Model {
     private String modelName;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "brand_id", updatable = false, insertable = false)
+    @JoinColumn(name = "brand_id")
     private Brand brand;
 
     @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
@@ -67,5 +67,10 @@ public class Model {
         this.variantList = variantList;
     }
 
+
+    @Override
+    public String toString() {
+        return "model id: "+this.getId()+" brand id: "+this.getBrand()+" name model: "+this.getModelName();
+    }
 }
 

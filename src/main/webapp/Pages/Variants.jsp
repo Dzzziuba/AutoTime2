@@ -22,9 +22,9 @@
 <body>
 <%@include file="/WEB-INF/Header.jsp" %>
 <% request.getSession(true);
-    long modelId = Long.valueOf(request.getParameter("model_id"));%>
-
-
+    long modelId = Long.valueOf(request.getParameter("model_id"));
+    String modelName=request.getParameter("model_name");
+%>
 <div class="brandlistspaces">
     <%
         VariantDaoImpl vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDaoImpl.class);
@@ -68,7 +68,8 @@
     %>
     <%
         if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) && Integer.valueOf(request.getParameter("brand_id")) != 0 && Integer.valueOf(request.getParameter("model_id")) != 0) {
-            session.setAttribute("model_id",modelId);%>
+            session.setAttribute("model_id",modelId);
+            session.setAttribute("model_name", modelName);%>
     <p class="whitespace">
     <form method="get" action="/AddNewVariant"><input type="submit" class="addbutton" value="+ Add new variant"/></form></p>
     <%

@@ -2,6 +2,7 @@ package com.auto.time.servlets;
 
 import com.auto.time.Model.Brand;
 import com.auto.time.Model.Model;
+import com.auto.time.dao.BrandDao;
 import com.auto.time.dao.ModelDao;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -23,24 +24,23 @@ public class DeleteModel extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
 
-        Brand brand = new Brand();
-
         long modelId = Long.valueOf((Long)session.getAttribute("model_id"));
-
         long brandId = Long.valueOf((Long)session.getAttribute("brand_id"));
 
-        brand.setId(brandId);
+        BrandDao brandDao = WebApplicationContextUtils.getWebApplicationContext(getServletContext()).getBean(BrandDao.class);
+        Brand brand = brandDao.getById(brandId);
 
         Model model = new Model();
-
         model.setId(modelId);
-
+        model.setModelName((String) session.getAttribute("model_name"));
         model.setBrand(brand);
 
         ModelDao modelDao = WebApplicationContextUtils.getWebApplicationContext(getServletContext()).getBean(ModelDao.class);
 
+        System.out.println(model.toString());
+
         modelDao.deleteModel(model);
 
-        resp.sendRedirect("Pages/Models.jsp");
+        resp.sendRedirect("Pages/Models.jsp?brand_id="+brand.getId()+"&brand_name="+brand.getBrandName());
     }
 }

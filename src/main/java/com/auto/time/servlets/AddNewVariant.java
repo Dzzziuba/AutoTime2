@@ -18,10 +18,12 @@ import java.io.IOException;
  */
 @WebServlet("/AddNewVariant")
 public class AddNewVariant extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("WEB-INF/AddVariant.jsp").forward(req,resp);
+        req.getRequestDispatcher("WEB-INF/AddVariant.jsp").forward(req, resp);
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long brandId = Long.valueOf(req.getParameter("brand_id"));
@@ -37,13 +39,13 @@ public class AddNewVariant extends HttpServlet {
         String horsePower = req.getParameter("horse_power").trim();
         String driveTrain = req.getParameter("drive_train").trim();
         String fuelType = req.getParameter("fuel_type").trim();
-        if (!(variantName.compareTo("") == 0      || variantName.compareTo(" ") == 0 || variantName.compareTo("	") == 0)&&
-                !(engine.compareTo("") == 0       || engine.compareTo(" ") == 0      || engine.compareTo("	") == 0)    &&
-                !(expertRating.compareTo("") == 0 || expertRating.compareTo(" ") == 0|| expertRating.compareTo("	") == 0)&&
-                !(fuelEconomy.compareTo("") == 0  || fuelEconomy.compareTo(" ") == 0 || fuelEconomy.compareTo("	") == 0)&&
-                !(horsePower.compareTo("") == 0   || horsePower.compareTo(" ") == 0  || horsePower.compareTo("	") == 0)&&
-                !(driveTrain.compareTo("") == 0   || driveTrain.compareTo(" ") == 0  || driveTrain.compareTo("	") == 0)&&
-                !(fuelType.compareTo("") == 0     || fuelType.compareTo(" ") == 0    || fuelType.compareTo("	") == 0)) {
+        if (!(variantName.compareTo("") == 0 || variantName.compareTo(" ") == 0 || variantName.compareTo("	") == 0) &&
+                !(engine.compareTo("") == 0 || engine.compareTo(" ") == 0 || engine.compareTo("	") == 0) &&
+                !(expertRating.compareTo("") == 0 || expertRating.compareTo(" ") == 0 || expertRating.compareTo("	") == 0) &&
+                !(fuelEconomy.compareTo("") == 0 || fuelEconomy.compareTo(" ") == 0 || fuelEconomy.compareTo("	") == 0) &&
+                !(horsePower.compareTo("") == 0 || horsePower.compareTo(" ") == 0 || horsePower.compareTo("	") == 0) &&
+                !(driveTrain.compareTo("") == 0 || driveTrain.compareTo(" ") == 0 || driveTrain.compareTo("	") == 0) &&
+                !(fuelType.compareTo("") == 0 || fuelType.compareTo(" ") == 0 || fuelType.compareTo("	") == 0)) {
             Variant variant = new Variant();
             variant.setBrand(brand);
             variant.setModel(model);
@@ -55,10 +57,15 @@ public class AddNewVariant extends HttpServlet {
             variant.setDriveTrain(driveTrain);
             variant.setFuelType(fuelType);
 
+
             VariantDao variantDao = WebApplicationContextUtils.getWebApplicationContext(getServletContext()).getBean(VariantDao.class);
             variantDao.addNewVariant(variant);
+
+
         }
-        resp.sendRedirect("Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" + req.getParameter("brand_name")+"&model_id="+modelId+"&model_name="+req.getParameter("model_name"));
+        resp.sendRedirect("Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
+                req.getSession().getAttribute("brand_name") + "&model_id=" + modelId +
+                "&model_name=" + req.getSession().getAttribute("model_name"));
 
     }
 }

@@ -51,11 +51,16 @@ public class VariantDaoImpl implements VariantDao {
         return variantList;
 
     }
-
-    public Variant getVariantByName(String name) {
-        return null;
+//--------------
+    public Variant getVariantById(long id) {
+        EntityManager em = emf.createEntityManager();
+        Query query = em.createQuery("select v from Variant v where id =:id");
+        query.setParameter("id", id);
+        Variant variant = (Variant) query.getSingleResult();
+        em.close();
+        return variant;
     }
-
+//-------
     public Map<String, String> getVariantInfo(long id) {
         EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("select i from Variant i where id=:id");
@@ -64,5 +69,14 @@ public class VariantDaoImpl implements VariantDao {
         Map<String, String> map = variant.showVariant();
         return map;
     }
+
+    public void editVariant(Variant variant) {
+
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.merge(variant);
+        em.getTransaction().commit();
+    }
+
 }
 

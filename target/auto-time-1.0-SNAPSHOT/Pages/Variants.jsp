@@ -71,7 +71,7 @@
             session.setAttribute("model_id",modelId);
             session.setAttribute("model_name", modelName);%>
     <p class="whitespace">
-    <form method="get" action="/AddNewVariant"><input type="submit" class="addbutton" value="+ Add new variant"/></form></p>
+    <form method="get" action="/AddVariant"><input type="submit" class="addbutton" value="+ Add new variant"/></form></p>
     <%
 
         }

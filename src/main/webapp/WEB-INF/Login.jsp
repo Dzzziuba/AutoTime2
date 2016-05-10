@@ -18,7 +18,7 @@
 
 
 <div class="login">
-    <form action="/admin" method="post">
+    <form action="/Login" method="post">
         <div>
             <input class="logininput" type="text" name="login" placeholder="Login"/>
         </div>

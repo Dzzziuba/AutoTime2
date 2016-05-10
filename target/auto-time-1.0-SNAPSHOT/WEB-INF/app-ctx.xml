@@ -26,5 +26,4 @@
     <bean id="vdi" class="com.auto.time.dao.impl.VariantDaoImpl"/>
 
 
-
 </beans>

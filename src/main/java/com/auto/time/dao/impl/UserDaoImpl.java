@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
-import java.util.List;
 
 /**
  * Created by Romachka on 20.04.16.
@@ -16,14 +15,21 @@ public class UserDaoImpl implements UserDao {
     @Autowired
     private EntityManagerFactory emf;
 
-    public boolean login(User user) {
+    public User login(User user) {
         EntityManager em = emf.createEntityManager();
 
         Query query = em.createQuery("select i from User i where userLogin=:login and userPassword=:password");
         query.setParameter("login", user.getUserLogin());
         query.setParameter("password", user.getUserPassword());
-        List<User> userList=query.getResultList();
+        //List<User> userList=query.getResultList();
+        User us;
+        try {
+            us = (User) query.getSingleResult();
+        } catch (Exception e) {
+            us = null;
+        }
 
-        return userList.isEmpty() ? false : true;
+        return us;
+        //return userList.isEmpty() ? false : true;
     }
 }

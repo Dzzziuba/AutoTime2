@@ -12,10 +12,11 @@ import java.util.Map;
 public interface VariantDao {
     List<Variant> getAllVariants();
     List<Variant> getVariantsByModelId(Model model);
-    Variant getVariantByName(String name);
+    Variant getVariantById(long id);
     void addNewVariant(Variant variant);
     void deleteVariant(String variantName, long modelId);
     void deleteVariant(long brandId);
+    public void editVariant(Variant variant);
     //LinkedHashMap<String, String> getVariantInfo(Variant variant);
     Map<String, String> getVariantInfo(long id);
 }

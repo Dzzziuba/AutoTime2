@@ -53,6 +53,7 @@ public class Brand {
         this.modelList = modelList;
     }
 
+
     @Override
     public String toString() {
         return "id= " + id + " Brand name= " + brandName;
@@ -62,6 +63,7 @@ public class Brand {
     public int hashCode() {
         return super.hashCode();
     }
+
 
     //@Override
     public boolean equals(Brand brand) {

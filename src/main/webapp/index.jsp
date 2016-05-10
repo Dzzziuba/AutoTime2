@@ -7,13 +7,14 @@
 </head>
 <body>
 <div>
-    <form action="/admin" method="get">
+    <form action="/Login" method="get">
         <input class="smallloginbutton" type="submit" value="Login">
     </form>
 </div>
 <h1 class="Title">Auto time!</h1>
 
 <% session.setAttribute("Login", false);%>
+<%session.invalidate();%>
 
 <div class="divspace">
     <p class="whitespace"><a href="Pages/Brands.jsp" class="menu">Brands</a></p>

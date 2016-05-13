@@ -4,7 +4,8 @@ package com.auto.time.Model;
 import javax.persistence.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
-
+import javax.validation.constraints.*;
+import org.hibernate.validator.constraints.*;
 /**
  * @author Romachka dzzziuba@gmail.com
  * @version v.0.0.1
@@ -18,7 +19,7 @@ public class Variant {
     @GeneratedValue
     @Column(name = "id")
     private long id;
-
+    @Size(min=3, max=30)
     @Column(name = "variantName")
     private String variantName;
 
@@ -28,16 +29,22 @@ public class Variant {
     @ManyToOne(optional = false)
     private Model model;
 
+    @Size(min=3, max=30)
     @Column(name = "engine")
     private String engine;
+    @Size(min=1, max=4)
     @Column(name = "expertRating")
     private String expertRating;
+    @Size(min=3, max=30)
     @Column(name = "fuelEconomy")
     private String fuelEconomy;
+    @Size(min=3, max=10)
     @Column(name = "horsePower")
     private String horsePower;
+    @Size(min=3, max=30)
     @Column(name = "driveTrain")
     private String driveTrain;
+    @Size(min=3, max=30)
     @Column(name = "fuelType")
     private String fuelType;
 

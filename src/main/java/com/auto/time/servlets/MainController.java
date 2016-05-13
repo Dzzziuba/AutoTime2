@@ -10,6 +10,7 @@ import com.auto.time.dao.UserDao;
 import com.auto.time.dao.VariantDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 /**
  * Created by Romachka on 04.05.16.
@@ -178,27 +180,32 @@ public class MainController {
 
 
     @RequestMapping(value = "/AddVariant", method = RequestMethod.POST)
-    public String addVariant(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("variantBean") Variant variant) {
+    public String addVariant(HttpServletRequest request, HttpServletResponse response, @Valid Variant variant, BindingResult result) {
+
         long brandId = Long.valueOf(request.getParameter("brand_id"));
         long modelId = Long.valueOf(request.getParameter("model_id"));
-        Brand brand = new Brand();
-        brand.setId(brandId);
-        Model model = new Model();
-        model.setId(modelId);
-        String variantName = request.getParameter("variant_name").trim();
-        String engine = request.getParameter("engine").trim();
-        String expertRating = request.getParameter("expert_rating").trim();
-        String fuelEconomy = request.getParameter("fuel_economy").trim();
-        String horsePower = request.getParameter("horse_power").trim();
-        String driveTrain = request.getParameter("drive_train").trim();
-        String fuelType = request.getParameter("fuel_type").trim();
-        if (!(variantName.compareTo("") == 0 || variantName.compareTo(" ") == 0 || variantName.compareTo("	") == 0) &&
-                !(engine.compareTo("") == 0 || engine.compareTo(" ") == 0 || engine.compareTo("	") == 0) &&
-                !(expertRating.compareTo("") == 0 || expertRating.compareTo(" ") == 0 || expertRating.compareTo("	") == 0) &&
-                !(fuelEconomy.compareTo("") == 0 || fuelEconomy.compareTo(" ") == 0 || fuelEconomy.compareTo("	") == 0) &&
-                !(horsePower.compareTo("") == 0 || horsePower.compareTo(" ") == 0 || horsePower.compareTo("	") == 0) &&
-                !(driveTrain.compareTo("") == 0 || driveTrain.compareTo(" ") == 0 || driveTrain.compareTo("	") == 0) &&
-                !(fuelType.compareTo("") == 0 || fuelType.compareTo(" ") == 0 || fuelType.compareTo("	") == 0)) {
+        if (result.hasErrors()) {
+            try {
+                response.sendRedirect("Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
+                        request.getSession().getAttribute("brand_name") + "&model_id=" + modelId +
+                        "&model_name=" + request.getSession().getAttribute("model_name"));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        } else {
+
+            Brand brand = new Brand();
+            brand.setId(brandId);
+            Model model = new Model();
+            model.setId(modelId);
+            String variantName = request.getParameter("variant_name").trim();
+            String engine = request.getParameter("engine").trim();
+            String expertRating = request.getParameter("expert_rating").trim();
+            String fuelEconomy = request.getParameter("fuel_economy").trim();
+            String horsePower = request.getParameter("horse_power").trim();
+            String driveTrain = request.getParameter("drive_train").trim();
+            String fuelType = request.getParameter("fuel_type").trim();
+
             variant.setBrand(brand);
             variant.setModel(model);
             variant.setVariantName(variantName);
@@ -210,13 +217,14 @@ public class MainController {
             variant.setFuelType(fuelType);
             variantDao.addNewVariant(variant);
 
-        }
-        try {
-            response.sendRedirect("Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
-                    request.getSession().getAttribute("brand_name") + "&model_id=" + modelId +
-                    "&model_name=" + request.getSession().getAttribute("model_name"));
-        } catch (Exception e) {
-            System.out.println("loh");
+
+            try {
+                response.sendRedirect("Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
+                        request.getSession().getAttribute("brand_name") + "&model_id=" + modelId +
+                        "&model_name=" + request.getSession().getAttribute("model_name"));
+            } catch (Exception e) {
+                System.out.println("loh");
+            }
         }
         return "Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
                 request.getSession().getAttribute("brand_name") + "&model_id=" + modelId +
@@ -230,45 +238,52 @@ public class MainController {
     }
 
     @RequestMapping(value = "/EditVariant", method = RequestMethod.POST)
-    public String editVariant(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("variantBean") Variant variant) {
+    public String editVariant(HttpServletRequest request, HttpServletResponse response, @Valid Variant variant, BindingResult result) {
         HttpSession session = request.getSession();
-        variant = variantDao.getVariantById((Long) session.getAttribute("variant_id"));
+        Variant variant2 = variantDao.getVariantById((Long) session.getAttribute("variant_id"));
 
-        String variantName = request.getParameter("variant_name").trim();
-        String engine = request.getParameter("engine").trim();
-        String expertRating = request.getParameter("expert_rating").trim();
-        String fuelEconomy = request.getParameter("fuel_economy").trim();
-        String horsePower = request.getParameter("horse_power").trim();
-        String driveTrain = request.getParameter("drive_train").trim();
-        String fuelType = request.getParameter("fuel_type").trim();
-        if (!(variantName.compareTo("") == 0 || variantName.compareTo(" ") == 0 || variantName.compareTo("	") == 0) &&
-                !(engine.compareTo("") == 0 || engine.compareTo(" ") == 0 || engine.compareTo("	") == 0) &&
-                !(expertRating.compareTo("") == 0 || expertRating.compareTo(" ") == 0 || expertRating.compareTo("	") == 0) &&
-                !(fuelEconomy.compareTo("") == 0 || fuelEconomy.compareTo(" ") == 0 || fuelEconomy.compareTo("	") == 0) &&
-                !(horsePower.compareTo("") == 0 || horsePower.compareTo(" ") == 0 || horsePower.compareTo("	") == 0) &&
-                !(driveTrain.compareTo("") == 0 || driveTrain.compareTo(" ") == 0 || driveTrain.compareTo("	") == 0) &&
-                !(fuelType.compareTo("") == 0 || fuelType.compareTo(" ") == 0 || fuelType.compareTo("	") == 0)) {
-            variant.setVariantName(variantName);
-            variant.setEngine(engine);
-            variant.setExpertRating(expertRating);
-            variant.setFuelEconomy(fuelEconomy);
-            variant.setHorsePower(horsePower);
-            variant.setDriveTrain(driveTrain);
-            variant.setFuelType(fuelType);
-            variantDao.editVariant(variant);
-        }
+        if (result.hasErrors()) {
+            try {
+                response.sendRedirect("Pages/Variant.jsp?model_id=" + session.getAttribute("model_id") + "&model_name=" + session.getAttribute("model_name") +
+                        "&variant_id=" + session.getAttribute("variant_id") + "&variant_name=" + request.getParameter("variant_name"));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        } else {
 
-        try {
-            response.sendRedirect("Pages/Variant.jsp?model_id=" + session.getAttribute("model_id") + "&model_name=" + session.getAttribute("model_name") +
-                    "&variant_id=" + session.getAttribute("variant_id") + "&variant_name=" + session.getAttribute("variant_name"));
-        } catch (Exception e) {
-            System.out.println("loh");
+            String variantName = request.getParameter("variant_name").trim();
+            String engine = request.getParameter("engine").trim();
+            String expertRating = request.getParameter("expert_rating").trim();
+            String fuelEconomy = request.getParameter("fuel_economy").trim();
+            String horsePower = request.getParameter("horse_power").trim();
+            String driveTrain = request.getParameter("drive_train").trim();
+            String fuelType = request.getParameter("fuel_type").trim();
+
+                variant.setId(variant2.getId());
+                variant.setBrand(variant2.getBrand());
+                variant.setModel(variant2.getModel());
+                variant.setVariantName(variantName);
+                variant.setEngine(engine);
+                variant.setExpertRating(expertRating);
+                variant.setFuelEconomy(fuelEconomy);
+                variant.setHorsePower(horsePower);
+                variant.setDriveTrain(driveTrain);
+                variant.setFuelType(fuelType);
+
+                variantDao.editVariant(variant);
+
+
+            try {
+                response.sendRedirect("Pages/Variant.jsp?model_id=" + session.getAttribute("model_id") + "&model_name=" + session.getAttribute("model_name") +
+                        "&variant_id=" + session.getAttribute("variant_id") + "&variant_name=" + variantName);
+            } catch (Exception e) {
+                System.out.println("loh");
+            }
         }
         return "Pages/Variant.jsp?model_id=" + session.getAttribute("model_id") + "&model_name=" + session.getAttribute("model_name") +
-                "&variant_id=" + session.getAttribute("variant_id") + "&variant_name=" + session.getAttribute("variant_name");
+                "&variant_id=" + session.getAttribute("variant_id") + "&variant_name=" + request.getParameter("variant_name");
     }
 }
-
 
 
 //Придумать что-то с pathvariable для того, чтобы изменить rewrite url, так как очень галимо получилось и не гибко

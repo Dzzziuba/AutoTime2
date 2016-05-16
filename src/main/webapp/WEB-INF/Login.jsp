@@ -26,7 +26,7 @@
             <input  class="logininput" type="password" name="password" placeholder="Password"/>
         </div>
         <div>
-            <p><input  class="loginbutton" type="submit" value="Log In" onclick="location.href='/Brands.jsp';"></p>
+            <p><input  class="loginbutton" type="submit" value="Log In"></p>
         </div>
     </form>
 </div>

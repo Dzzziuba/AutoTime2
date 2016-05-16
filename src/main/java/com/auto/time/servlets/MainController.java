@@ -71,12 +71,12 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/AddBrand", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/AddBrand", method = RequestMethod.GET)
     public String redirectBrand(HttpServletRequest request, HttpServletResponse response) {
         return "/WEB-INF/AddBrand.jsp";
     }
 
-    @RequestMapping(value = "/AddBrand", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/AddBrand", method = RequestMethod.POST)
     public String addBrand(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("brandBean") Brand brand) {
         String brandName = request.getParameter("brand");
         brandName = brandName.trim();
@@ -93,7 +93,7 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/DeleteBrand", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/DeleteBrand", method = RequestMethod.GET)
     public String deleteBrand(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("brandBean") Brand brand) {
 
 
@@ -117,7 +117,7 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/AddModel", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/AddModel", method = RequestMethod.GET)
     public String redirectModel(HttpServletRequest request, HttpServletResponse response) {
         return "/WEB-INF/AddModel.jsp";
     }
@@ -147,7 +147,7 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/DeleteModel", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/DeleteModel", method = RequestMethod.GET)
     public String delModel(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("modelBean") Model model) {
 
 
@@ -173,13 +173,13 @@ public class MainController {
     }
 
 
-    @RequestMapping(value = "/AddVariant", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/AddVariant", method = RequestMethod.GET)
     public String redirectVariant(HttpServletRequest request, HttpServletResponse response) {
         return "WEB-INF/AddVariant.jsp";
     }
 
 
-    @RequestMapping(value = "/AddVariant", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/AddVariant", method = RequestMethod.POST)
     public String addVariant(HttpServletRequest request, HttpServletResponse response, @Valid Variant variant, BindingResult result) {
 
         long brandId = Long.valueOf(request.getParameter("brand_id"));
@@ -231,13 +231,13 @@ public class MainController {
                 "&model_name=" + request.getSession().getAttribute("model_name");
     }
 
-    @RequestMapping(value = "/EditVariant", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/EditVariant", method = RequestMethod.GET)
     public String redirectVariant(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("variantBean") Variant variant) {
         HttpSession session = request.getSession();
         return "/WEB-INF/EditVariant.jsp?variant_id=" + session.getAttribute("variant_id");
     }
 
-    @RequestMapping(value = "/EditVariant", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/EditVariant", method = RequestMethod.POST)
     public String editVariant(HttpServletRequest request, HttpServletResponse response, @Valid Variant variant, BindingResult result) {
         HttpSession session = request.getSession();
         Variant variant2 = variantDao.getVariantById((Long) session.getAttribute("variant_id"));

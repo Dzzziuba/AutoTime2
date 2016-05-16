@@ -24,7 +24,7 @@
         if (Boolean.valueOf((boolean) session.getAttribute("Login"))) {
 %>
 
-        <form action="/AddBrand" method="post">
+        <form action="/admin/AddBrand" method="post">
             <div class="login">
         <div>
 

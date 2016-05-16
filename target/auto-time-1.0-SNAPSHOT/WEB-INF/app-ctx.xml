@@ -32,18 +32,17 @@
 
     <security:http auto-config="true">
         <security:intercept-url pattern="/" access="permitAll" />
-        <security:intercept-url pattern="/Add**" access="hasRole('ROLE_USER')" />
-        <security:intercept-url pattern="/Edit**" access="ROLE_USER" />
-        <!--<security:form-login  login-page="/Login" username-parameter="ssoId" password-parameter="password" authentication-failure-url="/Login" />-->
-        <!--<security:csrf />-->
+        <security:intercept-url pattern="/admin/**" access="hasRole('USER')" />
+        <security:form-login  login-page="/Login" username-parameter="ssoId" password-parameter="password" authentication-failure-url="/Login" />
+        <security:csrf disabled="true"/>
     </security:http>
 
 
     <security:authentication-manager>
         <security:authentication-provider>
             <security:user-service>
-                <security:user name="user" password="password" authorities="ROLE_USER" />
-                <security:user name="1" password="1" authorities="ROLE_USER" />
+                <security:user name="user" password="password" authorities="USER" />
+                <security:user name="1" password="1" authorities="USER" />
             </security:user-service>
         </security:authentication-provider>
     </security:authentication-manager>

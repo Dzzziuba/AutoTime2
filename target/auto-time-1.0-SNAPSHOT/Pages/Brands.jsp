@@ -39,7 +39,7 @@
     <%}%>
     <%if(BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))){%>
     <p class="whitespace">
-        <form method="get" action="/AddBrand"><input type="submit" class="addbutton" value="+ Add new brand"/></form></p>
+        <form method="get" action="/admin/AddBrand"><input type="submit" class="addbutton" value="+ Add new brand"/></form></p>
     <%}%>
 </div>
 

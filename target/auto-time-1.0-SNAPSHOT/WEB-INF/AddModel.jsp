@@ -21,7 +21,7 @@
         if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {
 %>
 
-<form action="/AddModel" method="post">
+<form action="/admin/AddModel" method="post">
     <div class="login">
 
         <div>

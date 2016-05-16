@@ -38,7 +38,7 @@
         if (model.getId() != 0) {%>
 
     <h1 style="color:#5C97BF;">${param.model_name}</h1> <%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>
-    <form method="get" action="/DeleteModel">
+    <form method="get" action="/admin/DeleteModel">
         <input type="submit" class="deletebutton" value="- Delete model ${param.model_name}"
                onclick="return confirm('Are you really want to delete model ${param.model_name} and all information which connected with it?!')"/>
     </form>
@@ -71,7 +71,7 @@
             session.setAttribute("model_id",modelId);
             session.setAttribute("model_name", modelName);%>
     <p class="whitespace">
-    <form method="get" action="/AddVariant"><input type="submit" class="addbutton" value="+ Add new variant"/></form></p>
+    <form method="get" action="/admin/AddVariant"><input type="submit" class="addbutton" value="+ Add new variant"/></form></p>
     <%
 
         }

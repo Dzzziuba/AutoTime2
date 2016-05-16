@@ -27,7 +27,7 @@
         Variant var = vdi.getVariantById(variantId);
     %>
 <h3> Edit <%=var.getVariantName()%> info of <%=var.getModel().getModelName()%>, <%=var.getBrand().getBrandName()%></h3>
-<form action="/EditVariant" method="post">
+<form action="/admin/EditVariant" method="post">
     <div class="login">
 <div>
 

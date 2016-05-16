@@ -38,7 +38,7 @@
     <h1 style="color:#5C97BF;">${param.brand_name}</h1>
 
     <%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>
-    <form method="get" action="/DeleteBrand">
+    <form method="get" action="/admin/DeleteBrand">
         <input type="submit" class="deletebutton" value="- Delete brand ${param.brand_name}"
                onclick="return confirm('Are you really want to delete brand ${param.brand_name} and all information which connected with it?!')"/>
     </form>
@@ -71,7 +71,7 @@
             session.setAttribute("brand_name", request.getParameter("brand_name"));
     %>
     <p class="whitespace">
-    <form method="get" action="/AddModel"><input type="submit" class="addbutton" value="+ Add new model"/></form>
+    <form method="get" action="/admin/AddModel"><input type="submit" class="addbutton" value="+ Add new model"/></form>
     </p>
     <%--<p class="whitespace"><a href="../WEB-INF/AddModel.jsp?brand_id=${param.brand_id}&brand_name=${param.brand_name}" class="brandtitle">+ Add new model</a></p>--%>
     <%

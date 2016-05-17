@@ -14,10 +14,16 @@
 
     <context:annotation-config/>
 
+    <tx:annotation-driven transaction-manager="txManager"/>
+
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="CARS"/>
     </bean>
-    <!--<tx:annotation-driven transaction-manager="txManager" />-->
+
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
     <bean id="bdi" class="com.auto.time.dao.impl.BrandDaoImpl"/>
 
     <bean id="mdi" class="com.auto.time.dao.impl.ModelDaoImpl"/>
@@ -26,14 +32,14 @@
 
     <bean id="vdi" class="com.auto.time.dao.impl.VariantDaoImpl"/>
 
+    <bean id="ws" class="com.auto.time.servlets.WebService"/>
 
 
-
-
-    <security:http auto-config="true">
-        <security:intercept-url pattern="/" access="permitAll" />
-        <security:intercept-url pattern="/admin/**" access="hasRole('USER')" />
-        <security:form-login  login-page="/Login" username-parameter="ssoId" password-parameter="password" authentication-failure-url="/Login" />
+    <security:http auto-config="true" use-expressions="true">
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/**" access="permitAll"/>
+        <security:form-login login-page="/Login" username-parameter="j_username" password-parameter="j_password"
+                             authentication-failure-url="/Login"/>
         <security:csrf disabled="true"/>
     </security:http>
 
@@ -41,15 +47,11 @@
     <security:authentication-manager>
         <security:authentication-provider>
             <security:user-service>
-                <security:user name="user" password="password" authorities="USER" />
-                <security:user name="1" password="1" authorities="USER" />
+                <security:user name="user" password="password" authorities="ROLE_USER"/>
+                <security:user name="1" password="1" authorities="ROLE_USER"/>
             </security:user-service>
         </security:authentication-provider>
     </security:authentication-manager>
-
-
-
-
 
 
 </beans>

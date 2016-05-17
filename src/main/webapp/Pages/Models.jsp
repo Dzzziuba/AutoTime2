@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.auto.time.Model.Brand" %>
 <%@ page import="com.auto.time.Model.Model" %>
-<%@ page import="com.auto.time.dao.impl.BrandDaoImpl" %>
+<%@ page import="com.auto.time.dao.ModelDao" %>
 <%@ page import="com.auto.time.dao.impl.ModelDaoImpl" %>
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
@@ -30,7 +30,7 @@
 <div class="brandlistspaces">
 
     <%
-        ModelDaoImpl mdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(ModelDaoImpl.class);
+        ModelDao mdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(ModelDao.class);
         List<Model> modelList;
         Brand brand = new Brand();
         brand.setId(brandId);

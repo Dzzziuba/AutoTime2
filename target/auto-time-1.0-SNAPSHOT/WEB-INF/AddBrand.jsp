@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <style>
@@ -16,13 +17,13 @@
 <body>
 <%@include file="/WEB-INF/Header.jsp" %>
 
-<%
-    request.getSession(true);
-    if (session.isNew()) {
-        session.setAttribute("Login", false);
-    } else {
-        if (Boolean.valueOf((boolean) session.getAttribute("Login"))) {
-%>
+<%--<%--%>
+    <%--request.getSession(true);--%>
+    <%--if (session.isNew()) {--%>
+        <%--session.setAttribute("Login", false);--%>
+    <%--} else {--%>
+        <%--if (Boolean.valueOf((boolean) session.getAttribute("Login"))) {--%>
+<%--%>--%>
 
         <form action="/admin/AddBrand" method="post">
             <div class="login">
@@ -36,9 +37,9 @@
             </div>
     </form>
 
-<%
-        }
-    }
-%>
+<%--<%--%>
+        <%--}--%>
+    <%--}--%>
+<%--%>--%>
 </body>
 </html>

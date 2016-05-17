@@ -1,7 +1,8 @@
-<%@ page import="com.auto.time.dao.impl.VariantDaoImpl" %>
+<%@ page import="com.auto.time.dao.VariantDao" %>
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%--
   Created by IntelliJ IDEA.
   User: Romachka
   Date: 22.04.16
@@ -28,14 +29,14 @@
     <input type="submit" class="deletebutton" value="- Edit variant ${param.variant_name}"
            onclick="return confirm('Are you really want to edit variant ${param.variant_name} and all information which connected with it?!')"/>
 </form>
-<%//session.setAttribute("variant_id", request.getParameter("variant_id"));%><%}%>
+<%}%>
 
 
-<% //request.getSession(true);
+<%
     long variantId = Long.valueOf(request.getParameter("variant_id"));
-session.setAttribute("variant_id", variantId);%>
+    session.setAttribute("variant_id", variantId);%>
 <div style="width: 30%">
-    <%VariantDaoImpl vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDaoImpl.class);%>
+    <%VariantDao vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDao.class);%>
     <%
         Map<String, String> map = vdi.getVariantInfo(variantId);
         for (Map.Entry entry : map.entrySet()) {

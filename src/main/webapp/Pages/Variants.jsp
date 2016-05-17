@@ -1,5 +1,6 @@
 <%@ page import="com.auto.time.Model.Model" %>
 <%@ page import="com.auto.time.Model.Variant" %>
+<%@ page import="com.auto.time.dao.VariantDao" %>
 <%@ page import="com.auto.time.dao.impl.VariantDaoImpl" %>
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
@@ -27,7 +28,7 @@
 %>
 <div class="brandlistspaces">
     <%
-        VariantDaoImpl vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDaoImpl.class);
+        VariantDao vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDao.class);
 
         List<Variant> variantList;
 

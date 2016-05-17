@@ -20,10 +20,10 @@
 <div class="login">
     <form action="/Login" method="post">
         <div>
-            <input class="logininput" type="text" name="login" placeholder="Login"/>
+            <input class="logininput" type="text" name="j_username" placeholder="Login"/>
         </div>
         <div>
-            <input  class="logininput" type="password" name="password" placeholder="Password"/>
+            <input  class="logininput" type="password" name="j_password" placeholder="Password"/>
         </div>
         <div>
             <p><input  class="loginbutton" type="submit" value="Log In"></p>

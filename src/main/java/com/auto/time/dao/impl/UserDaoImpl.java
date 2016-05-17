@@ -2,26 +2,28 @@ package com.auto.time.dao.impl;
 
 import com.auto.time.Model.User;
 import com.auto.time.dao.UserDao;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
  * Created by Romachka on 20.04.16.
  */
+@Transactional
 public class UserDaoImpl implements UserDao {
-    @Autowired
-    private EntityManagerFactory emf;
+
+    @PersistenceContext
+    public EntityManager em;
 
     public User login(User user) {
-        EntityManager em = emf.createEntityManager();
+        //EntityManager em = emf.createEntityManager();
 
         Query query = em.createQuery("select i from User i where userLogin=:login and userPassword=:password");
         query.setParameter("login", user.getUserLogin());
         query.setParameter("password", user.getUserPassword());
-        //List<User> userList=query.getResultList();
+
         User us;
         try {
             us = (User) query.getSingleResult();
@@ -30,6 +32,6 @@ public class UserDaoImpl implements UserDao {
         }
 
         return us;
-        //return userList.isEmpty() ? false : true;
+
     }
 }

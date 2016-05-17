@@ -10,6 +10,8 @@
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@ page import="java.util.List" %>
+<%@taglib prefix="security"
+          uri="http://www.springframework.org/tags"%>
 
 
 <html>
@@ -37,10 +39,12 @@
     </a></p>
 
     <%}%>
-    <%if(BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))){%>
+    <%--<%if(BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))){%>--%>
+    <sec:autorize access="hasRole('USER')">
     <p class="whitespace">
         <form method="get" action="/admin/AddBrand"><input type="submit" class="addbutton" value="+ Add new brand"/></form></p>
-    <%}%>
+    </sec:autorize>
+        <%--<%}%>--%>
 </div>
 
 </body>

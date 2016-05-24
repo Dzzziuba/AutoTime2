@@ -4,6 +4,7 @@
 <%@ page import="com.auto.time.dao.impl.VariantDaoImpl" %>
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: Romachka
@@ -38,12 +39,14 @@
 
         if (model.getId() != 0) {%>
 
-    <h1 style="color:#5C97BF;">${param.model_name}</h1> <%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>
+    <%--<h1 style="color:#5C97BF;">${param.model_name}</h1> <%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>--%>
+<sec:authorize access="hasRole('USER')">
     <form method="get" action="/admin/DeleteModel">
         <input type="submit" class="deletebutton" value="- Delete model ${param.model_name}"
                onclick="return confirm('Are you really want to delete model ${param.model_name} and all information which connected with it?!')"/>
     </form>
-    <%}%>
+    </sec:authorize>
+    <%--<%}%>--%>
 
             <%variantList = vdi.getVariantsByModelId(model);
 
@@ -67,8 +70,9 @@
             }
         }
     %>
+<sec:authorize access="hasRole('USER')">
     <%
-        if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) && Integer.valueOf(request.getParameter("brand_id")) != 0 && Integer.valueOf(request.getParameter("model_id")) != 0) {
+        if (/*BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) &&*/ Integer.valueOf(request.getParameter("brand_id")) != 0 && Integer.valueOf(request.getParameter("model_id")) != 0) {
             session.setAttribute("model_id",modelId);
             session.setAttribute("model_name", modelName);%>
     <p class="whitespace">
@@ -78,7 +82,7 @@
         }
     %>
 </div>
-
+</sec:authorize>
 
 </body>
 </html>

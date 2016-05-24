@@ -1,4 +1,5 @@
-<%@ page import="org.apache.commons.lang.BooleanUtils" %><%--
+<%@ page import="org.apache.commons.lang.BooleanUtils" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %><%--
   Created by IntelliJ IDEA.
   User: Romachka
   Date: 22.04.16
@@ -16,11 +17,11 @@
 <body>
 <%@include file="/WEB-INF/Header.jsp" %>
 
-<%
-    request.getSession(true);
-    if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {
-%>
-
+<%--<%--%>
+    <%--request.getSession(true);--%>
+    <%--if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {--%>
+<%--%>--%>
+<sec:authorize access="hasRole('USER')">
 <form action="/admin/AddVariant" method="post">
     <div class="login">
 
@@ -33,7 +34,7 @@
         </div>
 
         <div>
-            <input class="logininput" type="text" name="variant_name" placeholder="Name of variant"/>
+            <input class="logininput" type="text" name="variantName" placeholder="Name of variant"/>
         </div>
 
         <div>
@@ -41,24 +42,24 @@
         </div>
 
          <div>
-             <input class="logininput" type="text" name="expert_rating" placeholder="Expert rating"/>
+             <input class="logininput" type="text" name="expertRating" placeholder="Expert rating"/>
         </div>
 
         <div>
-            <input class="logininput" type="text" name="fuel_economy" placeholder="Fuel economy"/>
+            <input class="logininput" type="text" name="fuelEconomy" placeholder="Fuel economy"/>
         </div>
 
 
         <div>
-            <input class="logininput" type="text" name="horse_power" placeholder="Horse power"/>
+            <input class="logininput" type="text" name="horsePower" placeholder="Horse power"/>
         </div>
 
         <div>
-            <input class="logininput" type="text" name="drive_train" placeholder="Drive train"/>
+            <input class="logininput" type="text" name="driveTrain" placeholder="Drive train"/>
         </div>
 
         <div>
-            <input class="logininput" type="text" name="fuel_type" placeholder="Fuel type"/>
+            <input class="logininput" type="text" name="fuelType" placeholder="Fuel type"/>
         </div>
 
         <div>
@@ -66,10 +67,10 @@
         </div>
     </div>
 </form>
+</sec:authorize>
+<%--<%--%>
 
-<%
-
-    }
-%>
+    <%--}--%>
+<%--%>--%>
 </body>
 </html>

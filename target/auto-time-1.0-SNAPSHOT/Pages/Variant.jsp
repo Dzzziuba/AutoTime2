@@ -24,12 +24,14 @@
 <h1>${param.variant_name}</h1>
 
 
-<%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>
+<%--<%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>--%>
+<sec:authorize access="hasRole('USER')">
 <form method="get" action="/admin/EditVariant">
     <input type="submit" class="deletebutton" value="- Edit variant ${param.variant_name}"
            onclick="return confirm('Are you really want to edit variant ${param.variant_name} and all information which connected with it?!')"/>
 </form>
-<%}%>
+    </sec:authorize>
+<%--<%}%>--%>
 
 
 <%

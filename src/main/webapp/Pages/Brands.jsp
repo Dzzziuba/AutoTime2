@@ -5,13 +5,13 @@
   Time: 11:40
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page import="com.auto.time.Model.Brand" %>
 <%@ page import="com.auto.time.dao.BrandDao" %>
 <%@ page import="org.apache.commons.lang.BooleanUtils" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
 <%@ page import="java.util.List" %>
-<%@taglib prefix="security"
-          uri="http://www.springframework.org/tags"%>
+
 
 
 <html>
@@ -40,10 +40,10 @@
 
     <%}%>
     <%--<%if(BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))){%>--%>
-    <sec:autorize access="hasRole('USER')">
+    <sec:authorize access="hasRole('USER')">
     <p class="whitespace">
         <form method="get" action="/admin/AddBrand"><input type="submit" class="addbutton" value="+ Add new brand"/></form></p>
-    </sec:autorize>
+    </sec:authorize>
         <%--<%}%>--%>
 </div>
 

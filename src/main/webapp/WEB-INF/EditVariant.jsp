@@ -1,7 +1,7 @@
-<%@ page import="com.auto.time.dao.impl.VariantDaoImpl" %>
+<%@ page import="com.auto.time.Model.Variant" %>
+<%@ page import="com.auto.time.dao.VariantDao" %>
 <%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="com.auto.time.Model.Variant" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Romachka
   Date: 22.04.16
@@ -22,7 +22,7 @@
 <%@include file="/WEB-INF/Header.jsp" %>
 
     <%long variantId = Long.valueOf(request.getParameter("variant_id"));%>
-<% VariantDaoImpl vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDaoImpl.class);%>
+<% VariantDao vdi = WebApplicationContextUtils.getWebApplicationContext(application).getBean(VariantDao.class);%>
     <%
         Variant var = vdi.getVariantById(variantId);
     %>
@@ -33,7 +33,7 @@
 
 
     <div>
-        <input class="logininput" type="text" name="variant_name" value="<%=var.getVariantName()%>"/>
+        <input class="logininput" type="text" name="variantName" value="<%=var.getVariantName()%>"/>
     </div>
 
     <div>
@@ -41,24 +41,24 @@
     </div>
 
     <div>
-        <input class="logininput" type="text" name="expert_rating" value="<%=var.getExpertRating()%>"/>
+        <input class="logininput" type="text" name="expertRating" value="<%=var.getExpertRating()%>"/>
     </div>
 
     <div>
-        <input class="logininput" type="text" name="fuel_economy" value="<%=var.getFuelEconomy()%>"/>
+        <input class="logininput" type="text" name="fuelEconomy" value="<%=var.getFuelEconomy()%>"/>
     </div>
 
 
     <div>
-        <input class="logininput" type="text" name="horse_power" value="<%=var.getHorsePower()%>"/>
+        <input class="logininput" type="text" name="horsePower" value="<%=var.getHorsePower()%>"/>
     </div>
 
     <div>
-        <input class="logininput" type="text" name="drive_train" value="<%=var.getDriveTrain()%>"/>
+        <input class="logininput" type="text" name="driveTrain" value="<%=var.getDriveTrain()%>"/>
     </div>
 
     <div>
-        <input class="logininput" type="text" name="fuel_type" value="<%=var.getFuelType()%>"/>
+        <input class="logininput" type="text" name="fuelType" value="<%=var.getFuelType()%>"/>
     </div>
 
 </div>

@@ -50,9 +50,9 @@ public class ModelDaoImpl implements ModelDao {
 
     public void addNewModel(Model model) {
         //EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
+
         em.merge(model);
-        em.getTransaction().commit();
+
 
     }
 }

@@ -32,14 +32,13 @@
 
     <bean id="vdi" class="com.auto.time.dao.impl.VariantDaoImpl"/>
 
-    <bean id="ws" class="com.auto.time.servlets.WebService"/>
 
 
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/**" access="permitAll"/>
         <security:form-login login-page="/Login" username-parameter="j_username" password-parameter="j_password"
-                             authentication-failure-url="/Login"/>
+                          authentication-success-forward-url="/success" authentication-failure-url="/Login"/>
         <security:csrf disabled="true"/>
     </security:http>
 

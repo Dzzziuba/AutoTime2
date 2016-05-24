@@ -5,6 +5,7 @@
   Time: 12:29
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.auto.time.Model.Brand" %>
 <%@ page import="com.auto.time.Model.Model" %>
@@ -36,13 +37,14 @@
         brand.setId(brandId);
         if (brand.getId() != 0) {%>
     <h1 style="color:#5C97BF;">${param.brand_name}</h1>
-
-    <%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>
+    <sec:authorize access="hasRole('USER')">
+    <%--<%if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {%>--%>
     <form method="get" action="/admin/DeleteBrand">
         <input type="submit" class="deletebutton" value="- Delete brand ${param.brand_name}"
                onclick="return confirm('Are you really want to delete brand ${param.brand_name} and all information which connected with it?!')"/>
     </form>
-    <%}%>
+    </sec:authorize>
+    <%--<%}%>--%>
     <% modelList = mdi.getModelsByBrandId(brand);
     } else {%>
     <h1 style="color:#5C97BF;">All models</h1>
@@ -64,8 +66,9 @@
             }
         }
     %>
+<sec:authorize access="hasRole('USER')">
     <%
-        if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) && Integer.valueOf(request.getParameter("brand_id")) != 0) {
+        if (/*BooleanUtils.isTrue((Boolean) session.getAttribute("Login")) &&*/ Integer.valueOf(request.getParameter("brand_id")) != 0) {
             session.setAttribute("brand_id", brandId);
 
             session.setAttribute("brand_name", request.getParameter("brand_name"));
@@ -78,6 +81,7 @@
 
         }
     %>
+    </sec:authorize>
 </div>
 </body>
 </html>

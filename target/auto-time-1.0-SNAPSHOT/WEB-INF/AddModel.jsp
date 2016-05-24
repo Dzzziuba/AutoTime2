@@ -1,4 +1,5 @@
-<%@ page import="org.apache.commons.lang.BooleanUtils" %><%--
+<%@ page import="org.apache.commons.lang.BooleanUtils" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %><%--
   Created by IntelliJ IDEA.
   User: Romachka
   Date: 21.04.16
@@ -16,11 +17,12 @@
 <body>
 <%@include file="/WEB-INF/Header.jsp" %>
 
-<%
-    request.getSession(true);
-        if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {
-%>
 
+<%--<%--%>
+    <%--request.getSession(true);--%>
+        <%--if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {--%>
+<%--%>--%>
+<sec:authorize access="hasRole('USER')">
 <form action="/admin/AddModel" method="post">
     <div class="login">
 
@@ -36,10 +38,10 @@
         </div>
     </div>
 </form>
+</sec:authorize>
+<%--<%--%>
 
-<%
-
-    }
-%>
+    <%--}--%>
+<%--%>--%>
 </body>
 </html>

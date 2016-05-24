@@ -39,9 +39,9 @@ public class VariantDaoImpl implements VariantDao {
     public void addNewVariant(Variant variant) {
 
         //EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
+
         em.merge(variant);
-        em.getTransaction().commit();
+
     }
 
     public List<Variant> getVariantsByModelId(Model model) {
@@ -76,9 +76,9 @@ public class VariantDaoImpl implements VariantDao {
     public void editVariant(Variant variant) {
 
         //EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
+
         em.merge(variant);
-        em.getTransaction().commit();
+
     }
 
 }

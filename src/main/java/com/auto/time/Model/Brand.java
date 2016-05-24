@@ -1,6 +1,7 @@
 package com.auto.time.Model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ public class Brand {
     @Column(name = "brandName")
     private String brandName;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Model> modelList;
+    private List<Model> modelList = new ArrayList<Model>();
 
 
     public Brand() {

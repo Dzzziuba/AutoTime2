@@ -27,6 +27,7 @@
         Variant var = vdi.getVariantById(variantId);
     %>
 <h3> Edit <%=var.getVariantName()%> info of <%=var.getModel().getModelName()%>, <%=var.getBrand().getBrandName()%></h3>
+<sec:authorize access="hasRole('USER')">
 <form action="/admin/EditVariant" method="post">
     <div class="login">
 <div>
@@ -68,5 +69,6 @@
 </div>
         </div>
 </form>
+</sec:authorize>
 </body>
 </html>

@@ -50,6 +50,16 @@ public class BrandDaoImpl implements BrandDao {
         Query query = em.createQuery("select b from Brand b where id=:id");
         query.setParameter("id", id);
         Brand brand = (Brand) query.getSingleResult();
+        brand.getModelList().size();
+        return brand;
+    }
+
+    public Brand getBrandAndModel(long id) {
+        //Query query = em.createQuery("select b from Brand b JOIN fetch b.modelList i where b.id=:id");
+        Query query = em.createQuery("select b from Brand b where id=:id");
+        query.setParameter("id", id);
+        Brand brand = (Brand) query.getSingleResult();
+        brand.getModelList().size();
         return brand;
     }
 

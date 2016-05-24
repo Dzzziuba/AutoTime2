@@ -1,6 +1,8 @@
 package com.auto.time.Model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,13 +21,13 @@ public class Model {
 
     @Column(name = "modelName")
     private String modelName;
-
+    @NotNull
     @ManyToOne(optional = false)
-    @JoinColumn(name = "brand_id")
+    @JoinColumn(updatable = false, insertable = false)
     private Brand brand;
 
     @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
-    private List<Variant> variantList;
+    private List<Variant> variantList = new ArrayList<Variant>();
 
     public Model() {
     }

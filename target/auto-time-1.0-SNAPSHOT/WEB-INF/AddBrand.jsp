@@ -24,7 +24,7 @@
     <%--} else {--%>
         <%--if (Boolean.valueOf((boolean) session.getAttribute("Login"))) {--%>
 <%--%>--%>
-
+<sec:authorize access="hasRole('USER')">
         <form action="/admin/AddBrand" method="post">
             <div class="login">
         <div>
@@ -36,7 +36,7 @@
         </div>
             </div>
     </form>
-
+</sec:authorize>
 <%--<%--%>
         <%--}--%>
     <%--}--%>

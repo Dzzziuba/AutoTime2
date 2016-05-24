@@ -33,7 +33,6 @@
     <bean id="vdi" class="com.auto.time.dao.impl.VariantDaoImpl"/>
 
 
-
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_USER')"/>
         <security:intercept-url pattern="/**" access="permitAll"/>
@@ -45,6 +44,7 @@
 
     <security:authentication-manager>
         <security:authentication-provider>
+            <!--<security:jdbc-user-service data-source-ref="dataSource"></security:jdbc-user-service>-->
             <security:user-service>
                 <security:user name="user" password="password" authorities="ROLE_USER"/>
                 <security:user name="1" password="1" authorities="ROLE_USER"/>

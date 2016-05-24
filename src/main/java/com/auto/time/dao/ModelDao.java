@@ -12,6 +12,6 @@ public interface ModelDao {
     List<Model> getModelsByBrandId(Brand brand);
     List<Model> getAllModels();
     Model getModelByName(String modelName);
-    void addNewModel(Model model);
+    void addNewModel(Model model, Brand brand);
     void deleteModel(Model model);
 }

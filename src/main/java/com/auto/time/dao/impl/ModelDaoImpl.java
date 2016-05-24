@@ -21,7 +21,6 @@ public class ModelDaoImpl implements ModelDao {
     private EntityManager em;
 
     public List<Model> getModelsByBrandId(Brand brand) {
-        //EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("select v from Model v where brand =:brand");
         query.setParameter("brand", brand);
         List<Model> result = query.getResultList();
@@ -29,7 +28,7 @@ public class ModelDaoImpl implements ModelDao {
     }
 
     public List<Model> getAllModels() {
-        //EntityManager em = emf.createEntityManager();
+
         TypedQuery<Model> modelList = em.createQuery("select i from Model i", Model.class);
         List<Model> result = modelList.getResultList();
         return result;
@@ -41,18 +40,13 @@ public class ModelDaoImpl implements ModelDao {
 
 
     public void deleteModel(Model model) {
-
-        //EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
         em.remove(em.merge(model));
-        em.getTransaction().commit();
+
     }
 
-    public void addNewModel(Model model) {
-        //EntityManager em = emf.createEntityManager();
+    public void addNewModel(Model model, Brand brand) {
 
-        em.merge(model);
-
+        em.merge(brand);
 
     }
 }

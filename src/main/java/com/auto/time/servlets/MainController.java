@@ -127,9 +127,11 @@ public class MainController {
         String modelName = request.getParameter("model_name").trim();
         if (!(modelName.compareTo("") == 0 || modelName.compareTo(" ") == 0 || modelName.compareTo("	") == 0)) {
             Brand brand = brandDao.getById(brandId);
+
+            brand.getModelList().add(model);
             model.setBrand(brand);
             model.setModelName(modelName);
-            modelDao.addNewModel(model);
+            modelDao.addNewModel(model, brand);
         }
 
         HttpSession session = request.getSession();
@@ -153,12 +155,12 @@ public class MainController {
         model.setBrand(brand);
         modelDao.deleteModel(model);
         try {
-            response.sendRedirect("Pages/Models.jsp?brand_id=" + brand.getId() + "&brand_name=" + brand.getBrandName());
+            response.sendRedirect("/Pages/Models.jsp?brand_id=" + brand.getId() + "&brand_name=" + brand.getBrandName());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return "Pages/Models.jsp?brand_id=" + brand.getId() + "&brand_name=" + brand.getBrandName();
+        return "/Pages/Models.jsp?brand_id=" + brand.getId() + "&brand_name=" + brand.getBrandName();
     }
 
 

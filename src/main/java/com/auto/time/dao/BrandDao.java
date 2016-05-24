@@ -14,6 +14,6 @@ public interface BrandDao {
     void deleteBrand(Brand brand);
     void deleteBrand(long brandId);
     Brand getById(long id);
-
+    Brand getBrandAndModel(long id);
 
 }

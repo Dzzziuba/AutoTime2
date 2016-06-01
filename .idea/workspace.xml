@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89fa9f0a-59c0-4792-b173-343bb3b7a07d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="89fa9f0a-59c0-4792-b173-343bb3b7a07d" name="Default" comment="" />
     <ignored path="AutoTime.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1027,7 +1024,7 @@
       <workItem from="1464099065215" duration="6297000" />
       <workItem from="1464162415945" duration="211000" />
       <workItem from="1464802247244" duration="55000" />
-      <workItem from="1464802318836" duration="427000" />
+      <workItem from="1464802318836" duration="441000" />
     </task>
     <task id="LOCAL-00001" summary="gj">
       <created>1461527298374</created>
@@ -1082,7 +1079,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189937000" />
+    <option name="totallyTimeSpent" value="189951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

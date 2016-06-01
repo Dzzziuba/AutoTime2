@@ -1,3 +1,12 @@
 # IntellijIdea files
 *.iml
 .idea
+src/main/java/.DS_Store
+src/main/java/com/.DS_Store
+src/main/java/com/auto/.DS_Store
+src/main/java/com/auto/time/.DS_Store
+src/main/java/com/auto/time/servlets/.DS_Store
+src/main/resources/.DS_Store
+src/main/webapp/WEB-INF/.DS_Store
+target/generated-sources/
+target/surefire/

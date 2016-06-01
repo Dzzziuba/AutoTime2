@@ -1,6 +1,6 @@
 # IntellijIdea files
 *.iml
-.idea/*
+.idea
 src/main/java/.DS_Store
 src/main/java/com/.DS_Store
 src/main/java/com/auto/.DS_Store

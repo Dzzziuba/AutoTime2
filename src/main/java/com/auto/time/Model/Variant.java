@@ -17,10 +17,8 @@ import org.hibernate.validator.constraints.*;
 public class Variant {
     @Id
     @GeneratedValue
-    @Column(name = "id")
     private long id;
     @Size(min=3, max=30)
-    @Column(name = "variantName")
     private String variantName;
 
     @ManyToOne(optional = false)
@@ -30,22 +28,16 @@ public class Variant {
     private Model model;
 
     @Size(min=3, max=30)
-    @Column(name = "engine")
     private String engine;
     @Size(min=1, max=4)
-    @Column(name = "expertRating")
     private String expertRating;
     @Size(min=3, max=30)
-    @Column(name = "fuelEconomy")
     private String fuelEconomy;
     @Size(min=3, max=10)
-    @Column(name = "horsePower")
     private String horsePower;
     @Size(min=3, max=30)
-    @Column(name = "driveTrain")
     private String driveTrain;
     @Size(min=3, max=30)
-    @Column(name = "fuelType")
     private String fuelType;
 
     public Variant() {

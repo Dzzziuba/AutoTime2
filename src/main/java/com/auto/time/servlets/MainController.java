@@ -151,7 +151,6 @@ public class MainController {
         long brandId = Long.valueOf((Long) session.getAttribute("brand_id"));
         Brand brand = brandDao.getById(brandId);
         model.setId(modelId);
-        model.setModelName((String) session.getAttribute("model_name"));
         model.setBrand(brand);
         modelDao.deleteModel(model);
         try {

@@ -40,7 +40,7 @@ public class BrandDaoImpl implements BrandDao {
 
     public void deleteBrand(Brand brand) {
         em.remove(em.merge(brand));
-    }
+    } // use getReference like in model
 
     public void deleteBrand(long brandId) {
 

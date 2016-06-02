@@ -40,7 +40,8 @@ public class ModelDaoImpl implements ModelDao {
 
 
     public void deleteModel(Model model) {
-        em.remove(em.merge(model));
+        //em.remove(em.merge(model));
+        em.remove(em.getReference(Model.class, model.getId()));
 
     }
 

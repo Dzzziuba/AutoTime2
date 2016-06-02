@@ -16,17 +16,11 @@ import java.util.List;
 public class Model {
     @Id
     @GeneratedValue
-    @Column(name = "id")
     private long id;
-
-    @Column(name = "modelName")
     private String modelName;
-    @NotNull
-    @ManyToOne(optional = false)
-    @JoinColumn(updatable = false, insertable = false)
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     private Brand brand;
-
-    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Variant> variantList = new ArrayList<Variant>();
 
     public Model() {

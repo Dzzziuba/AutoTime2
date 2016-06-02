@@ -15,11 +15,9 @@ import java.util.List;
 public class Brand {
     @Id
     @GeneratedValue
-    @Column(name = "id")
     private long id;
-    @Column(name = "brandName")
     private String brandName;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand")
     private List<Model> modelList = new ArrayList<Model>();
 
 

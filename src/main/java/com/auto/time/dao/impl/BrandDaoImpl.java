@@ -39,8 +39,9 @@ public class BrandDaoImpl implements BrandDao {
 
 
     public void deleteBrand(Brand brand) {
-        em.remove(em.merge(brand));
-    } // use getReference like in model
+        brand.getModelList().size();
+        em.remove(em.getReference(Brand.class, brand.getId()));
+    }
 
     public void deleteBrand(long brandId) {
 
@@ -55,7 +56,6 @@ public class BrandDaoImpl implements BrandDao {
     }
 
     public Brand getBrandAndModel(long id) {
-        //Query query = em.createQuery("select b from Brand b JOIN fetch b.modelList i where b.id=:id");
         Query query = em.createQuery("select b from Brand b where id=:id");
         query.setParameter("id", id);
         Brand brand = (Brand) query.getSingleResult();

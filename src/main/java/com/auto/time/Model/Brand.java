@@ -19,6 +19,8 @@ public class Brand {
     private String brandName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand")
     private List<Model> modelList = new ArrayList<Model>();
+//    @OneToMany(cascade = CascadeType.ALL)
+//    private List<Variant> variantList = new ArrayList<Variant>();
 
 
     public Brand() {

@@ -40,14 +40,20 @@ public class ModelDaoImpl implements ModelDao {
 
 
     public void deleteModel(Model model) {
-        //em.remove(em.merge(model));
+        model.getVariantList().size();
         em.remove(em.getReference(Model.class, model.getId()));
-
     }
 
     public void addNewModel(Model model, Brand brand) {
 
         em.merge(brand);
 
+    }
+    public Model getModelById(long id){
+        Query query = em.createQuery("select b from Model b where id=:id");
+        query.setParameter("id", id);
+        Model model = (Model) query.getSingleResult();
+        model.getVariantList().size();
+        return model;
     }
 }

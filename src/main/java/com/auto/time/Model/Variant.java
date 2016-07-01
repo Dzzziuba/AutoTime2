@@ -29,7 +29,7 @@ public class Variant {
 
     @Size(min=3, max=30)
     private String engine;
-    @Size(min=1, max=4)
+    @Size(min=1, max=8)
     private String expertRating;
     @Size(min=3, max=30)
     private String fuelEconomy;

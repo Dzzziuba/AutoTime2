@@ -125,14 +125,12 @@ public class MainController {
     public String addModel(HttpServletRequest request, HttpServletResponse response, @ModelAttribute Model model) {
         long brandId = Long.valueOf(request.getParameter("brand_id"));
         String modelName = request.getParameter("model_name").trim();
-        if (!(modelName.compareTo("") == 0 || modelName.compareTo(" ") == 0 || modelName.compareTo("	") == 0)) {
-            Brand brand = brandDao.getById(brandId);
-
+        Brand brand = brandDao.getById(brandId);
             brand.getModelList().add(model);
             model.setBrand(brand);
             model.setModelName(modelName);
             modelDao.addNewModel(model, brand);
-        }
+
 
         HttpSession session = request.getSession();
         try {
@@ -171,9 +169,8 @@ public class MainController {
 
     @RequestMapping(value = "/admin/AddVariant", method = RequestMethod.POST)
     public String addVariant(HttpServletRequest request, HttpServletResponse response, @ModelAttribute @Valid Variant variant, BindingResult result) {
-
-        long brandId = Long.valueOf(request.getParameter("brand_id"));
-        long modelId = Long.valueOf(request.getParameter("model_id"));
+        long brandId = Long.valueOf(request.getSession().getAttribute("brand_id").toString());
+        long modelId = Long.valueOf(request.getSession().getAttribute("model_id").toString());
         if (result.hasErrors()) {
             try {
                 response.sendRedirect("/Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
@@ -183,13 +180,12 @@ public class MainController {
                 ex.printStackTrace();
             }
         } else {
-            Brand brand = new Brand();
-            brand.setId(brandId);
-            Model model = new Model();
-            model.setId(modelId);
-            variant.setBrand(brand);
+            Model model = modelDao.getModelById(modelId);
+            model.getVariantList().add(variant);
+            Brand brand = brandDao.getById(brandId);
             variant.setModel(model);
-            variantDao.addNewVariant(variant);
+            variant.setBrand(brand);
+            variantDao.addNewVariant(variant,model);
             try {
                 response.sendRedirect("/Pages/Variants.jsp?brand_id=" + brandId + "&brand_name=" +
                                               request.getSession().getAttribute("brand_name") + "&model_id=" + modelId +
@@ -235,6 +231,29 @@ public class MainController {
         }
         return "/Pages/Variant.jsp?model_id=" + session.getAttribute("model_id") + "&model_name=" + session.getAttribute("model_name") +
                        "&variant_id=" + session.getAttribute("variant_id") + "&variant_name=" + request.getParameter("variant_name");
+    }
+
+
+    @RequestMapping(value = "/admin/DeleteVariant", method = RequestMethod.GET)
+    public String delModel(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        long modelId = Long.valueOf((Long) session.getAttribute("model_id"));
+        long brandId = Long.valueOf((Long) session.getAttribute("brand_id"));
+        long variantId = Long.valueOf((Long) session.getAttribute("variant_id"));
+        Variant variant2 = variantDao.getVariantById(variantId);
+        Brand brand = brandDao.getById(brandId);
+        Model model = modelDao.getModelById(modelId);
+        variant2.setId(variantId);
+        variant2.setBrand(brand);
+        variant2.setModel(model);
+        variantDao.deleteVariant(variant2);
+        try {
+            response.sendRedirect("/Pages/Variants.jsp?brand_id=" + brandId +"&brand_name="+request.getSession().getAttribute("brand_name") + "&model_id=" + modelId + "&model_name=" + request.getSession().getAttribute("model_name"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "/Pages/Variants.jsp?brand_id=" + brandId +"&brand_name="+request.getSession().getAttribute("brand_name") + "&model_id=" + modelId + "&model_name=" + request.getSession().getAttribute("model_name");
     }
 }
 

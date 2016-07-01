@@ -11,7 +11,7 @@ import java.util.List;
 public interface ModelDao {
     List<Model> getModelsByBrandId(Brand brand);
     List<Model> getAllModels();
-    Model getModelByName(String modelName);
+    Model getModelById(long id);
     void addNewModel(Model model, Brand brand);
     void deleteModel(Model model);
 }

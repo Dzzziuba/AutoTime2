@@ -22,30 +22,21 @@ public class VariantDaoImpl implements VariantDao {
     public EntityManager em;
 
     public List<Variant> getAllVariants() {
-        //EntityManager em = emf.createEntityManager();
         TypedQuery<Variant> variantList = em.createQuery("select i from Variant i", Variant.class);
         List<Variant> result = variantList.getResultList();
         return result;
     }
 
-    public void deleteVariant(long brandId) {
 
+    public void deleteVariant(Variant variant) {
+        em.remove(em.getReference(Variant.class, variant.getId()));
     }
 
-    public void deleteVariant(String variantName, long modelId) {
-
-    }
-
-    public void addNewVariant(Variant variant) {
-
-        //EntityManager em = emf.createEntityManager();
-
-        em.merge(variant);
-
+    public void addNewVariant(Variant variant, Model model) {
+        em.merge(model);
     }
 
     public List<Variant> getVariantsByModelId(Model model) {
-        //EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("select v from Variant v where model =:model");
         query.setParameter("model", model);
         List<Variant> variantList = query.getResultList();
@@ -53,9 +44,7 @@ public class VariantDaoImpl implements VariantDao {
 
     }
 
-    //--------------
     public Variant getVariantById(long id) {
-        //EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("select v from Variant v where id =:id");
         query.setParameter("id", id);
         Variant variant = (Variant) query.getSingleResult();
@@ -63,9 +52,7 @@ public class VariantDaoImpl implements VariantDao {
         return variant;
     }
 
-    //-------
     public Map<String, String> getVariantInfo(long id) {
-        //EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("select i from Variant i where id=:id");
         query.setParameter("id", id);
         Variant variant = (Variant) query.getSingleResult();
@@ -74,11 +61,7 @@ public class VariantDaoImpl implements VariantDao {
     }
 
     public void editVariant(Variant variant) {
-
-        //EntityManager em = emf.createEntityManager();
-
         em.merge(variant);
-
     }
 
 }

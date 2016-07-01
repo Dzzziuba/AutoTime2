@@ -13,9 +13,8 @@ public interface VariantDao {
     List<Variant> getAllVariants();
     List<Variant> getVariantsByModelId(Model model);
     Variant getVariantById(long id);
-    void addNewVariant(Variant variant);
-    void deleteVariant(String variantName, long modelId);
-    void deleteVariant(long brandId);
+    void addNewVariant(Variant variant, Model model);
+    void deleteVariant(Variant variant);
     public void editVariant(Variant variant);
     //LinkedHashMap<String, String> getVariantInfo(Variant variant);
     Map<String, String> getVariantInfo(long id);

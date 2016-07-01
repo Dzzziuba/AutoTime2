@@ -18,9 +18,9 @@ public class Model {
     @GeneratedValue
     private long id;
     private String modelName;
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(optional = false)
     private Brand brand;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "model")
     private List<Variant> variantList = new ArrayList<Variant>();
 
     public Model() {

@@ -17,21 +17,9 @@
 <body>
 <%@include file="/WEB-INF/Header.jsp" %>
 
-<%--<%--%>
-    <%--request.getSession(true);--%>
-    <%--if (BooleanUtils.isTrue((Boolean) session.getAttribute("Login"))) {--%>
-<%--%>--%>
 <sec:authorize access="hasRole('USER')">
 <form action="/admin/AddVariant" method="post">
     <div class="login">
-
-        <div>
-            <input class="logininput" hidden="true" type="text" name="brand_id" value="<%=session.getAttribute("brand_id")%>"/>
-        </div>
-
-        <div>
-            <input class="logininput" hidden="true" type="text" name="model_id" value="<%=session.getAttribute("model_id")%>"/>
-        </div>
 
         <div>
             <input class="logininput" type="text" name="variantName" placeholder="Name of variant"/>
@@ -68,9 +56,5 @@
     </div>
 </form>
 </sec:authorize>
-<%--<%--%>
-
-    <%--}--%>
-<%--%>--%>
 </body>
 </html>

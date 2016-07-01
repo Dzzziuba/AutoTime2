@@ -26,13 +26,18 @@
     <%
         Variant var = vdi.getVariantById(variantId);
     %>
-<h3> Edit <%=var.getVariantName()%> info of <%=var.getModel().getModelName()%>, <%=var.getBrand().getBrandName()%></h3>
+<h1 style="color:#5C97BF;">Edit <%=var.getVariantName()%> info of <%=var.getModel().getModelName()%>, <%=var.getBrand().getBrandName()%></h1>
+<sec:authorize access="hasRole('USER')">
+    <form method="get" action="/admin/DeleteVariant">
+        <input type="submit" class="deletebutton" value="- Delete variant <%=var.getVariantName()%>"
+               onclick="return confirm('Are you really want to delete variant <%=var.getVariantName()%> and all information which connected with it?!')"/>
+    </form>
+</sec:authorize>
 <sec:authorize access="hasRole('USER')">
 <form action="/admin/EditVariant" method="post">
+
     <div class="login">
-<div>
-
-
+        <div>
     <div>
         <input class="logininput" type="text" name="variantName" value="<%=var.getVariantName()%>"/>
     </div>

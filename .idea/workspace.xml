@@ -1,40 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89fa9f0a-59c0-4792-b173-343bb3b7a07d" name="Default" comment="bugs fixed">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Brand.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Brand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Model.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/ModelDao.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/ModelDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/VariantDao.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/VariantDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/BrandDaoImpl.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/BrandDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/ModelDaoImpl.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/ModelDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/VariantDaoImpl.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/dao/impl/VariantDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/MainController.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Brand.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Brand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Model.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Model.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/ModelDao.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/ModelDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/VariantDao.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/VariantDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/BrandDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/BrandDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/ModelDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/ModelDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/VariantDaoImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/dao/impl/VariantDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/servlets/MainController.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/servlets/MainController.class" />
+    <list default="true" id="89fa9f0a-59c0-4792-b173-343bb3b7a07d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Variant.class" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/Model/Variant.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Variant.class" afterPath="$PROJECT_DIR$/target/classes/com/auto/time/Model/Variant.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Variant.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/Model/Variant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/ModelDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/ModelDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/VariantDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/VariantDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/BrandDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/ModelDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/VariantDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/dao/impl/VariantDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/auto/time/servlets/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddVariant.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/AddVariant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/EditVariant.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/EditVariant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddVariant.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/AddVariant.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/EditVariant.jsp" afterPath="$PROJECT_DIR$/target/auto-time-1.0-SNAPSHOT/WEB-INF/EditVariant.jsp" />
     </list>
     <ignored path="AutoTime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1257,7 +1228,7 @@
       <workItem from="1465927546436" duration="2896000" />
       <workItem from="1467376583903" duration="53000" />
       <workItem from="1467376702444" duration="25000" />
-      <workItem from="1467376748844" duration="3001000" />
+      <workItem from="1467376748844" duration="3125000" />
     </task>
     <task id="LOCAL-00001" summary="gj">
       <created>1461527298374</created>
@@ -1308,11 +1279,18 @@
       <option name="project" value="LOCAL" />
       <updated>1461833158978</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="bugs fixed. Delete variant added">
+      <created>1467380094436</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1467380094436</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201046000" />
+    <option name="totallyTimeSpent" value="201170000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1370,7 +1348,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gj" />
     <MESSAGE value="bugs fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugs fixed" />
+    <MESSAGE value="bugs fixed. Delete variant added" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs fixed. Delete variant added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

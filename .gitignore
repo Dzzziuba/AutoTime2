@@ -11,3 +11,12 @@ src/main/webapp/WEB-INF/.DS_Store
 target/generated-sources/
 target/surefire/
 .idea/workspace.xml
+/.idea/
+
+.idea/workspace.xml
+
+target/auto-time-1.0-SNAPSHOT.war
+
+target/auto-time-1.0-SNAPSHOT/WEB-INF/classes/com/auto/time/servlets/MainController.class
+
+target/classes/com/auto/time/servlets/MainController.class

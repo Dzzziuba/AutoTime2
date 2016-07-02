@@ -45,9 +45,10 @@
     <security:authentication-manager>
         <security:authentication-provider>
             <!--<security:jdbc-user-service data-source-ref="dataSource"></security:jdbc-user-service>-->
+            <security:password-encoder hash="md5"/>
             <security:user-service>
                 <security:user name="user" password="password" authorities="ROLE_USER"/>
-                <security:user name="1" password="1" authorities="ROLE_USER"/>
+                <security:user name="1" password="1"  authorities="ROLE_USER"/>
             </security:user-service>
         </security:authentication-provider>
     </security:authentication-manager>
